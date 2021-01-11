@@ -9,4 +9,6 @@ add-apt-repository ppa:tricksterguy87/complx
 add-apt-repository ppa:tricksterguy87/nin10kit
 apt update
 apt install -y complx-tools nin10kit
+# PDF viewer for documentation.
+apt install -y evince
 apt install -y gcc-arm-none-eabi gdb-multiarch mednafen
