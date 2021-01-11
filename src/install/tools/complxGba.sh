@@ -5,7 +5,8 @@ set -e
 echo "Install complx"
 apt-get update
 apt-get install -y software-properties-common
-add-apt-repository ppa:tricksterguy87/ppa-gt-cs2110
+add-apt-repository ppa:tricksterguy87/complx
+add-apt-repository ppa:tricksterguy87/nin10kit
 apt update
-apt install -y complx-tools
-apt install -y gcc-arm-none-eabi cs2110-gba-linker-script nin10kit mednafen
+apt install -y complx-tools nin10kit
+apt install -y gcc-arm-none-eabi gdb-multiarch mednafen

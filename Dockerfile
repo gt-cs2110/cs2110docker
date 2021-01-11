@@ -1,6 +1,6 @@
  # This Dockerfile is used to build an headles vnc image based on Ubuntu
 
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 MAINTAINER Gibran Essa "gibran@gatech.edu"
 ENV REFRESHED_AT 2020-06-28
