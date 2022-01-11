@@ -166,7 +166,7 @@ There are two ways to run the Docker image---using a browser or using a VNC clie
 
 \begin{center}
     \begin{verbatim}
-        http://<ip-address>:6901/vnc.html
+        http://127.0.0.1:6901/vnc.html
     \end{verbatim}
 \end{center}
 
@@ -178,7 +178,10 @@ Click connect and enter the super secret password: \textbf{cs2110rocks}
 
 If you don’t want to use the browser, you can also connect using any VNC client. In order to connect, use the same base URL as the browser, but use the port \textbf{5901} with nothing after it.
 
-That’s it! You should be up and running with what looks like a virtual machine running in your browser! If you open up the File Manager and look along the left, you should see a device called \textbf{host}. This is the folder that you had the \textit{cs2110docker.sh} script in. It has been mounted inside of the container. \textbf{When you are doing your work, you should edit all of you files in this folder ON YOUR HOST MACHINE. Then, use the Docker container to run the code. DO NOT EDIT FILES INSIDE THE CONTAINER. THEY WILL DISAPPEAR. PLEASE DON’T DO IT. PLEASE.} You will not get extensions on projects because you saved stuff where you should not have. We are making this very clear up front. Don’t do it.
+That’s it! You should be up and running with a desktop in your browser! If you open up the File Manager and look along the left, you should see a device called \textbf{host}, whcih contains all of the same files and folders as the folder containing \textit{cs2110docker.sh}. For instance, if \textit{cs2110docker.sh} is stored in Desktop, then you should see all the contents of Desktop inside \textbf{host}. The folder has been \textit{mounted} inside the container, meaning updating the files on your computer will be reflected in the container and vice versa.
+
+
+\textbf{When you are doing your work, you should edit all of you files in this folder on your host machine. Then, use the Docker container to run the code. DO NOT SAVE FILES INSIDE THE CONTAINER ANYWHERE EXCEPT IN THE host FOLDER. THEY WILL DISAPPEAR. PLEASE DON’T DO IT. PLEASE.} You will not get extensions on projects because you saved stuff where you should not have. We are making this very clear up front. Don’t do it.
 
 When you are done using the container, you can shut it down by running
 
