@@ -6,6 +6,6 @@ Name=CircuitSim
 GenericName=CircuitSim
 Comment=Circuit Simulator
 Categories=Development
-Exec=java -jar /cs2110/src/CircuitSim.jar
+Exec=java --module-path /usr/share/openjfx/lib/ --add-modules=javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web -jar /cs2110/src/CircuitSim.jar
 
 Terminal=false

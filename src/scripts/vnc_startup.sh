@@ -34,6 +34,8 @@ if [[ $1 =~ -h|--help ]]; then
     exit 0
 fi
 
+# TightVNC requires USER to be set, and it isn't set by Docker
+export USER=$(whoami)
 # should also source $STARTUPDIR/generate_container_user
 source $HOME/.bashrc
 

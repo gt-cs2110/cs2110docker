@@ -4,6 +4,6 @@ set -e
 
 echo "Install gcc/gdb"
 apt-get update
-apt-get install -y gcc gdb build-essential libc6-i386 pkg-config check valgrind
+apt-get install -y gcc gdb build-essential libc6 pkg-config check valgrind
 apt-get clean -y
 
