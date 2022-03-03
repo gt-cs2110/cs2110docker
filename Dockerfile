@@ -24,7 +24,7 @@ ENV HOME=/cs2110 \
     DEBIAN_FRONTEND=noninteractive \
     VNC_COL_DEPTH=24 \
     VNC_RESOLUTION=1600x900 \
-    VNC_PW=cs2110rocks \
+    VNC_PW= \
     VNC_VIEW_ONLY=false
 WORKDIR $HOME
 

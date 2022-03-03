@@ -19,7 +19,7 @@ latest  stable version of branch 'master'
 dev     current development version of branch 'dev'
 
 OPTIONS:
--w, --wait      (default) keeps the UI and the vncserver up until SIGINT or SIGTERM will received
+-w, --wait      (default) keeps the UI and the Xvnc up until SIGINT or SIGTERM will received
 -s, --skip      skip the vnc startup and just execute the assigned command.
                 example: docker run consol/centos-xfce-vnc --skip bash
 -d, --debug     enables more detailed startup output
@@ -34,8 +34,6 @@ if [[ $1 =~ -h|--help ]]; then
     exit 0
 fi
 
-# TightVNC requires USER to be set, and it isn't set by Docker
-export USER=$(whoami)
 # should also source $STARTUPDIR/generate_container_user
 source $HOME/.bashrc
 
@@ -75,7 +73,7 @@ echo "$VNC_PW" | vncpasswd -f >> $PASSWD_PATH
 chmod 600 $PASSWD_PATH
 
 
-## start vncserver and noVNC webclient
+## start Xvnc and noVNC webclient
 echo -e "\n------------------ start noVNC  ----------------------------"
 if [[ $DEBUG == true ]]; then echo "$NO_VNC_HOME/utils/launch.sh --vnc localhost:$VNC_PORT --listen $NO_VNC_PORT"; fi
 $NO_VNC_HOME/utils/launch.sh --vnc localhost:$VNC_PORT --listen $NO_VNC_PORT &> $STARTUPDIR/no_vnc_startup.log &
@@ -83,19 +81,27 @@ PID_SUB=$!
 
 echo -e "\n------------------ start VNC server ------------------------"
 echo "remove old vnc locks to be a reattachable container"
-vncserver -kill $DISPLAY &> $STARTUPDIR/vnc_startup.log \
+Xvnc -kill $DISPLAY &> $STARTUPDIR/vnc_startup.log \
     || rm -rfv /tmp/.X*-lock /tmp/.X11-unix &> $STARTUPDIR/vnc_startup.log \
     || echo "no locks present"
 
-echo -e "start vncserver with param: VNC_COL_DEPTH=$VNC_COL_DEPTH, VNC_RESOLUTION=$VNC_RESOLUTION\n..."
-if [[ $DEBUG == true ]]; then echo "vncserver $DISPLAY -depth $VNC_COL_DEPTH -geometry $VNC_RESOLUTION"; fi
-vncserver $DISPLAY -depth $VNC_COL_DEPTH -geometry $VNC_RESOLUTION &> $STARTUPDIR/no_vnc_startup.log
+echo -e "start Xvnc with param: VNC_COL_DEPTH=$VNC_COL_DEPTH, VNC_RESOLUTION=$VNC_RESOLUTION\n..."
+
+vnc_server_cmd="Xvnc $DISPLAY -depth $VNC_COL_DEPTH -geometry $VNC_RESOLUTION"
+if [[ $VNC_PW == "" ]]; then
+    vnc_server_cmd="$vnc_server_cmd -SecurityTypes None"
+else
+    vnc_server_cmd="$vnc_server_cmd -PasswordFile $PASSWD_PATH"
+fi
+if [[ $DEBUG == true ]]; then echo "$vnc_server_cmd"; fi
+$vnc_server_cmd& &> $STARTUPDIR/no_vnc_startup.log
+
 echo -e "start window manager\n..."
 $HOME/wm_startup.sh &> $STARTUPDIR/wm_startup.log
 
 ## log connect options
 echo -e "\n\n------------------ VNC environment started ------------------"
-echo -e "\nVNCSERVER started on DISPLAY= $DISPLAY \n\t=> connect via VNC viewer with $VNC_IP:$VNC_PORT"
+echo -e "\nXvnc started on DISPLAY= $DISPLAY \n\t=> connect via VNC viewer with $VNC_IP:$VNC_PORT"
 echo -e "\nnoVNC HTML client started:\n\t=> connect via http://$VNC_IP:$NO_VNC_PORT/?password=...\n"
 
 
