@@ -10,7 +10,7 @@ add-apt-repository ppa:tricksterguy87/nin10kit
 
 apt-get update
 
-apt-get install -y complx-tools
+apt-get install -y complx-tools nin10kit
 apt-get install -y gcc-arm-none-eabi gdb-multiarch
 
 # GBA linker script; random oddities needed in the GBA Makefiles.
