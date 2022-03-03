@@ -4,7 +4,7 @@ FROM ubuntu:20.04
 
 MAINTAINER Nicole Prindle "nprindle@gatech.edu"
 ENV REFRESHED_AT 2022-01-11
-ENV CS2110_IMAGE_VERSION 2.0.0
+ENV CS2110_IMAGE_VERSION 2.0.1-rc1
 
 ## Connection ports for controlling the UI:
 # VNC port:5901
