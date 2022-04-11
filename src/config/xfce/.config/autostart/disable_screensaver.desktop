@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+
+Name="Disable screensaver"
+Type=Application
+Exec=sh -c "sleep 10 && xset s off"
+TryExec=xset
+Terminal=false
