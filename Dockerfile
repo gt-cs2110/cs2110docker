@@ -49,8 +49,6 @@ RUN $INST_SCRIPTS/base/tigervnc.sh
 RUN $INST_SCRIPTS/base/no_vnc.sh
 RUN $INST_SCRIPTS/base/xfce_ui.sh
 
-ADD ./src/config/xfce/ $HOME/
-
 ### Install gcc/gdb
 RUN $INST_SCRIPTS/tools/cTools.sh
 
@@ -60,6 +58,8 @@ ENV PATH=$PATH:/usr/games
 
 ### Install circuitsim and java
 RUN $INST_SCRIPTS/tools/circuitsimJava.sh
+
+ADD ./src/config/xfce/ $HOME/
 
 ### configure startup
 RUN $INST_SCRIPTS/base/libnss_wrapper.sh
