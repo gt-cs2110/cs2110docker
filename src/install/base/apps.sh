@@ -9,7 +9,8 @@ apt-get install -y evince
 
 # minimal text editors, mostly for TA/professor use
 # students generally shouldn't be editing inside the container
-apt-get install -y vim-tiny nano
+apt-get install -y vim nano
 
 apt-get clean -y
 
+rm -rf /var/lib/apt/lists/*

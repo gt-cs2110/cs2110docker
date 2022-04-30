@@ -11,3 +11,5 @@ apt-get clean -y
 
 echo "generate locales für en_US.UTF-8"
 locale-gen en_US.UTF-8
+
+rm -rf /var/lib/apt/lists/*

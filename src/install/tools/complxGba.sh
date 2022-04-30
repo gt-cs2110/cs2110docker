@@ -11,7 +11,11 @@ add-apt-repository ppa:tricksterguy87/nin10kit
 apt-get update
 
 apt-get install -y complx-tools nin10kit
+# Note that the /usr/lib/arm-none-eabi/newlib/thumb directory from libnewlib-arm-none-eabi is excluded
+# from installation, as it is very large and not needed. See apply_preinstall_patches.sh
 apt-get install -y gcc-arm-none-eabi gdb-multiarch
+
+apt-get install -y -o Dpkg::Options::="--path-exclude=/usr/lib/arm-none-eabi/newlib/thumb/*" libnewlib-arm-none-eabi
 
 # GBA linker script; random oddities needed in the GBA Makefiles.
 dpkg --force-architecture -i $INST_SCRIPTS/pkgs/cs2110-gba-linker-script_1.1.2-0ubuntu1~ppa1~bionic1_amd64.deb
@@ -41,3 +45,4 @@ rm $INST_SCRIPTS/pkgs/mgba_arm64.tar.gz
 mkdir -p $HOME/.config/mgba
 cp $INST_SCRIPTS/configs/mgba-config.ini $HOME/.config/mgba/config.ini
 
+rm -rf /var/lib/apt/lists/*

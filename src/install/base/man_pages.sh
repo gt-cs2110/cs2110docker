@@ -14,3 +14,4 @@ dpkg-divert --quiet --remove --rename /usr/bin/man
 # Get a better pager
 apt-get install -y less
 
+rm -rf /var/lib/apt/lists/*

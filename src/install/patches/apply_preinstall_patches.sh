@@ -9,3 +9,5 @@ apt-get clean -y
 # Don't exclude man pages
 patch -u /etc/dpkg/dpkg.cfg.d/excludes -i $INST_SCRIPTS/patches/dont-exclude-man.patch
 
+# Don't install recommends by default
+echo 'APT::Install-Recommends "false";' > /etc/apt/apt.conf.d/99-no-install-recommends
