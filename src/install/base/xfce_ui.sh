@@ -5,7 +5,7 @@ set -e
 echo "Install Xfce4 UI components"
 apt-get update
 
-apt-get install -y supervisor xfce4 xfce4-terminal dbus-x11 desktop-base adwaita-icon-theme-full xfce4-notifyd xorg
+apt-get install -y xfce4 xfce4-terminal dbus-x11 xfce4-notifyd xorg
 apt-get purge -y pm-utils xscreensaver*
 apt-get clean -y
 

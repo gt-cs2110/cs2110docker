@@ -1,0 +1,8 @@
+--- /etc/dpkg/dpkg.cfg.d/excludes	2022-05-02 01:37:18.000000000 +0000
++++ excludes.new	2022-05-02 02:05:13.089474376 +0000
+@@ -11,4 +11,4 @@
+ path-include=/usr/share/doc/*/copyright
+ 
+ # ... and Debian changelogs
+-path-include=/usr/share/doc/*/changelog.Debian.*
++#path-include=/usr/share/doc/*/changelog.Debian.*

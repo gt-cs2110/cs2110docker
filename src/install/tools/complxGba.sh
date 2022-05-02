@@ -11,8 +11,7 @@ add-apt-repository ppa:tricksterguy87/nin10kit
 apt-get update
 
 apt-get install -y complx-tools nin10kit
-# Note that the /usr/lib/arm-none-eabi/newlib/thumb directory from libnewlib-arm-none-eabi is excluded
-# from installation, as it is very large and not needed. See apply_preinstall_patches.sh
+# Note that the /usr/lib/arm-none-eabi/newlib/thumb directory from libnewlib-arm-none-eabi is excluded from installation, as it is very large and not needed.
 apt-get install -y gcc-arm-none-eabi gdb-multiarch
 
 apt-get install -y -o Dpkg::Options::="--path-exclude=/usr/lib/arm-none-eabi/newlib/thumb/*" libnewlib-arm-none-eabi
