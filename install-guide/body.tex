@@ -98,7 +98,14 @@ This may take a moment if it is your first time running the script, but if every
 
 Make sure you rebooted your computer after installation. The installation process should install a ``Docker Desktop'' application on your computer. Search for this via your Start Menu, and open it.
 
-The first time you open this, it may warn you that ``WSL 2 is not installed''. If this occurs, follow the instructions here to install WSL2: \href{https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-1---enable-the-windows-subsystem-for-linux}{https://docs.microsoft.com/en-us/windows/wsl/install-win10}. You do not need to install a Linux distribution; only follow Step 1 through Step 5.
+The first time you open this, you may get a popup mentioning ``WSL 2 is not installed''. If this occurs there are two ways you can install WSL 2.
+
+First, you can try the automatic installation by following the instructions found here: \href{https://docs.microsoft.com/en-us/windows/wsl/install}{https://docs.microsoft.com/en-us/windows/wsl/install}.
+This option is quicker since it completes the entire WSL 2 installation and setup with one command.
+
+However, if you encounter the error ``wsl command not found'' then you are advised to follow the manual WSL 2 installation directions which can be found here: \href{https://docs.microsoft.com/en-us/windows/wsl/install-manual}{https://docs.microsoft.com/en-us/windows/wsl/install-manual}
+
+While following the steps in either option, you do not need to install a Linux distribution; \textit{so only follow Step 1 through Step 5 of the manual installation}.
 
 When the whale in the bottom left of this window is green and says ``Running'' on hover, Docker is ready to run. If you cannot get Docker for Windows to run, you likely have not enabled virtualization in your BIOS---ask a TA for help.
 
