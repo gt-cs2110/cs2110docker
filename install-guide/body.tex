@@ -4,15 +4,15 @@ PLEASE READ THIS SECTION CAREFULLY. The installation process is easy, but there 
 
 \subsection{macOS}
 
-If you have the M1 Mac (Apple silicon), then follow the instructions for the preview build for the M1 here: \url{https://docs.docker.com/docker-for-mac/apple-silicon/}. Note that support for Docker on Apple silicon is still experimental, and we have had issues in the past. If you run into strange issues during normal operation, please let the TAs know.
+If you have the M1 Mac (Apple silicon), then follow the instructions for the preview build for the M1 here: \url{https://docs.docker.com/docker-for-mac/apple-silicon/}. Note that support for Docker on Apple silicon is still experimental, although we have managed to mitigate most issues, it is possible that you will still encounter some. If you run into strange issues during normal operation, please let the TAs know.
 
 Otherwise, if your Mac is a 2010 model or newer and is running macOS El Capitan 10.11 or newer, you can head over to Docker’s website at the following link and follow the instructions to install the Community Edition of Docker: \url{https://docs.docker.com/docker-for-mac/install/}
 
-If your Mac is older than 2010, come to office hours or ask on Piazza and we can discuss a solution.
+If your Mac is older than 2010, come to office hours or ask on Ed Discussion / Piazza and we can discuss a solution.
 
 \subsection{Windows}
 
-The distribution of Docker on Windows has recently switched from the legacy ``Docker Toolbox'' to the new ``Docker Desktop for Windows''. To find out which one you should install, you first have to check your Windows version. Open your Start Menu in the bottom left, enter ``\texttt{winver}'', and press enter. \textbf{Note that if you are on Windows 10, you probably want to install the more recent version.}
+The distribution of Docker on Windows has recently switched from the legacy ``Docker Toolbox'' to the new ``Docker Desktop for Windows''. To find out which one you should install, you first have to check your Windows version. Open your Start Menu in the bottom left, enter ``\texttt{winver}'', and press enter. \textbf{Note that if you are on Windows 10 or Windows 11, you probably want to install the more recent version.}
 
 \begin{itemize}
     \item If the menu indicates that you have Windows Home, and your version is 1903 or above, then see Section \ref{windows-new} below.
@@ -27,14 +27,7 @@ First, install Git for Windows if you do not already have it, which can be found
 
 The Git installation will prompt you for lots of configuration options about Git; if you don't know what an option means, select the default option.
 
-Next, install Docker Desktop for Windows.
-
-\begin{itemize}
-    \item If you found that you have Windows Home, then follow the installation instructions here: \url{https://docs.docker.com/docker-for-windows/install-windows-home/}.
-    Additionally, you must install WSL 2. Instructions to do so can be found here: \href{https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-1---enable-the-windows-subsystem-for-linux}{https://docs.microsoft.com/en-us/windows/wsl/install-win10}.
-
-    \item If you found that you have Windows Pro, Enterprise, or Education, then follow the installation instructions here: \url{https://docs.docker.com/docker-for-windows/install/}
-\end{itemize}
+Next, install Docker Desktop for Windows. Follow the installation instructions here: \url{https://docs.docker.com/docker-for-windows/install/}. Note that we will be using the ``WSL2 backend'', not the ``Hyper-V backend''.
 
 If prompted to choose between ``Edge'' and ``Stable'' versions to download, select ``Stable''. If prompted to install the necessary components for WSL2, select yes.
 
@@ -42,7 +35,9 @@ Follow the guides up through ``Start Docker Desktop''. You do not need to follow
 
 \subsubsection{Windows (Legacy)}\label{windows-old}
 
-Firstly, check that you actually want to do this. Unless you are still on Windows 8, this is probably not the option you want.
+Firstly, check that you actually want to do this. Unless you are still on Windows 8 or earlier, this is probably not the option you want.
+
+\textbf{YOU SHOULD NOT have this installed alongside the Docker Desktop software described in ``Windows (Recent)''}. You \textbf{will} run into problems. If you have a recent version of Windows and still have issues following the ``Recent'' instructions, please reach out to a TA.
 
 First, install the latest version of VirtualBox, which can be found at the following link.
 \url{https://www.virtualbox.org/wiki/Downloads}, Click on \texttt{Windows Host} to download, then run the installer.
@@ -57,10 +52,9 @@ Second, install Docker Toolbox. You can find instructions archived here:
 \end{center}
 
 \subsection{Linux}
-In order to install Docker on Linux (specifically Ubuntu), you need to be running at least Ubuntu 16.04. If you are running a different flavor of Linux, you should be able to find instructions online on how to install it. If you are running Ubuntu 16.04 or newer, follow the instructions here: \url{https://docs.docker.com/install/linux/docker-ce/ubuntu/}. For other Linux distributions, you can follow online instructions; if you get stuck, you can ask a TA or ask for help on Piazza.
+In order to install Docker on Linux (specifically Ubuntu), you need to be running at least Ubuntu 16.04. If you are running a different flavor of Linux, you should be able to find instructions online on how to install it. If you are running Ubuntu 16.04 or newer, follow the instructions here: \url{https://docs.docker.com/install/linux/docker-ce/ubuntu/}. For other Linux distributions, you can follow online instructions; if you get stuck, you can ask a TA or ask for help on Ed Discussion / Piazza.
 
-
-
+\newpage
 \section{CS 2110 Docker Image}
 We have created a Docker image for the students of CS 2110 that contains all of the tools that they will need throughout this course. The image itself is hosted on Docker Hub (https://hub.docker.com/r/gtcs2110/cs2110docker/), but we have developed a script for you to use so you don’t need to worry about that. The image is setup to be a very basic Ubuntu 20.04 machine (currently on 18.04 due to technical issues, but will be upgraded soon) that includes the following tools that you need for this class:
 
@@ -160,23 +154,22 @@ Once you’ve created the user group (which you only have to do on the first run
 
 This may take a moment if it is your first time running the script, but if everything goes as planned, you should see eventually see the message ``\texttt{Successfully launched CS 2110 Docker container.}''
 
-
+    
 \section{Using the CS 2110 Docker Container}
 There are two ways to run the Docker image---using a browser or using a VNC client. When you ran the cs2110docker.sh script, the last line outputted a URL, which should be something along the lines of
 
 \begin{center}
     \begin{verbatim}
-        http://127.0.0.1:6901/vnc.html
+        http://127.0.0.1:6901/
     \end{verbatim}
 \end{center}
-
 This URL gives you access to the container from a web browser, which is the easiest way to use it. Open up your browser and go to the URL. You should see this page:
 \begin{center}
     \includegraphics[scale=0.25]{docker.png}
 \end{center}
-Click connect and enter the super secret password: \textbf{cs2110rocks}
+Click connect.
 
-If you don’t want to use the browser, you can also connect using any VNC client. In order to connect, use the same base URL as the browser, but use the port \textbf{5901} with nothing after it.
+If you don’t want to use the browser, you can also connect using any VNC client. In order to connect, use the same base URL as the browser, but use the port \textbf{5901}.
 
 That’s it! You should be up and running with a desktop in your browser! If you open up the File Manager and look along the left, you should see a device called \textbf{host}, whcih contains all of the same files and folders as the folder containing \textit{cs2110docker.sh}. For instance, if \textit{cs2110docker.sh} is stored in Desktop, then you should see all the contents of Desktop inside \textbf{host}. The folder has been \textit{mounted} inside the container, meaning updating the files on your computer will be reflected in the container and vice versa.
 
@@ -191,6 +184,7 @@ When you are done using the container, you can shut it down by running
     \end{verbatim}
 \end{center}
 
+\newpage
 If you are interested in running the container in the shell (no graphics), you can run
 
 \begin{center}
@@ -200,9 +194,8 @@ If you are interested in running the container in the shell (no graphics), you c
 \end{center}
 
 
-
 \section{Wrap up}
-That’s about all that there is to the CS 2110 Docker container setup. If you have any questions or issues, please post on Piazza \textbf{under the Docker folder}, so we can sort through Docker questions efficiently.
+That’s about all that there is to the CS 2110 Docker container setup. If you have any questions or issues, please post on Ed Discussion / Piazza \textbf{under the Docker folder}, so we can sort through Docker questions efficiently. If there is no Docker folder, then please post any Docker questions under ``General''.
 
 \section{Addendum: What even is Docker??}
 I’m so glad you asked. In order to answer this question we have to go back in time.
@@ -260,4 +253,5 @@ As a result, we are using Docker to mimic a VM. This isn't precisely how Docker 
   \item The TAs can release updates/fixes mid-semester without any action on the students' part
   \item Since containers are stateless, if you have any problems, all you have to do is delete it and create a new one, which takes about 5 seconds
 \end{itemize}
+
 

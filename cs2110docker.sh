@@ -127,7 +127,7 @@ elif [ "$action" = "start" ]; then
   successfulRun=$?
 
   if [ $successfulRun = 0 ]; then
-    echo "Successfully launched CS 2110 Docker container. Please go to http://$ipAddress:6901/vnc.html to access it."
+    echo "Successfully launched CS 2110 Docker container. Please go to http://$ipAddress:6901/ to access it."
   else
     >&2 echo "ERROR: Unable to launch CS 2110 Docker container."
   fi
