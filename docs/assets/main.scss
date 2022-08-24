@@ -1,0 +1,25 @@
+---
+---
+
+@import url(https://fonts.googleapis.com/css?family=Lato&family=Fira+Code);
+* {
+    font-family: "Lato"
+}
+code {
+    font-family: "Fira Code"    
+}
+
+@import "{{ site.theme }}";
+p + ul, p + ol {
+ margin-top:-10px;
+}
+
+hr {
+  margin-bottom:10px
+}
+
+img.centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
