@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+
+Name="Check update"
+Type=Application
+Exec=/usr/bin/python "/cs2110/.config/autostart/checkUpdate.py"
+TryExec=/usr/bin/python
+Terminal=false
