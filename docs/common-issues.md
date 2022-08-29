@@ -52,6 +52,12 @@ If that doesn't fix things, the next thing is to play around with how you are mo
 
 ---
 
+**I get some error about "invalid mode" when I run the `cs2110docker.sh` script.**
+
+Make sure the `cs2110docker.sh` script is not in a folder that contains an apostrophe `'` character in the path. If it is, and you still get this error, it's possible that other types of special characters could cause this issue.
+
+---
+
 **<a name="wslconfig"/>I'm on Windows and have noticed that the container eats up too many resources.**
 
 Create a text file in `C:\Users\<UserName>\` called `.wslconfig` and put something like this in it (substituting whatever values you want, of course):

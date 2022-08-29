@@ -111,8 +111,7 @@ if command -v docker-machine &> /dev/null; then
   currDir="/$(pwd)"
 else
   # pwd -W should correct path incompatibilites on Windows for Docker Desktop users
-  # Trim colons to prevent the drive letter alone from sometimes being interpreted as the source
-  currDir="/$( (pwd -W 2>/dev/null || pwd) | tr -d :)"
+  currDir="/$(pwd -W 2>/dev/null || pwd)"
 fi
 
 if [ "$action" = "-it" ]; then
