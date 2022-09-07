@@ -87,7 +87,7 @@ Xvnc -kill $DISPLAY &> $STARTUPDIR/vnc_startup.log \
 
 echo -e "start Xvnc with param: VNC_COL_DEPTH=$VNC_COL_DEPTH, VNC_RESOLUTION=$VNC_RESOLUTION\n..."
 
-vnc_server_cmd="Xvnc $DISPLAY -depth $VNC_COL_DEPTH -geometry $VNC_RESOLUTION"
+vnc_server_cmd="Xvnc $DISPLAY -depth $VNC_COL_DEPTH -geometry $VNC_RESOLUTION -rfbport $VNC_PORT"
 if [[ $VNC_PW == "" ]]; then
     vnc_server_cmd="$vnc_server_cmd -SecurityTypes None"
 else
