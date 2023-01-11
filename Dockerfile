@@ -1,10 +1,10 @@
  # This Dockerfile is used to build an headless vnc image based on Ubuntu
 
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 MAINTAINER Sameer Suri "sameersuri@gatech.edu"
-ENV REFRESHED_AT 2022-10-16
-ENV CS2110_IMAGE_VERSION 2.1.5
+ENV REFRESHED_AT 2023-01-10
+ENV CS2110_IMAGE_VERSION 2.2.0
 
 ## Connection ports for controlling the UI:
 # VNC port:5901

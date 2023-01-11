@@ -5,7 +5,7 @@ set -e
 echo "Install some common tools for further installation"
 apt-get update
 apt-get install -y wget net-tools locales bzip2 zip unzip
-apt-get install -y python-numpy # used for websockify/novnc
+apt-get install -y python3-numpy # used for websockify/novnc
 apt-get install -y python-is-python3 # for fixing python shebangs
 apt-get clean -y
 

@@ -4,7 +4,7 @@ set -e
 
 echo "Install complx"
 apt-get update
-apt-get install -y software-properties-common
+apt-get install -y software-properties-common gpg-agent
 add-apt-repository ppa:tricksterguy87/complx
 add-apt-repository ppa:tricksterguy87/nin10kit
 
@@ -28,7 +28,7 @@ if [[ $(dpkg --print-architecture) == "arm64" ]]; then
     # TODO: find a better solution
 
     # Install dependencies
-    apt-get install -y libsdl2-2.0-0 libopengl0 libqt5widgets5 libqt5core5a libqt5gui5 libqt5multimedia5 libqt5opengl5 libzip5
+    apt-get install -y libsdl2-2.0-0 libopengl0 libqt5widgets5 libqt5core5a libqt5gui5 libqt5multimedia5 libqt5opengl5 libzip4
     
     # Extract tarball with binaries
     tar -zxvf $INST_SCRIPTS/pkgs/mgba_arm64.tar.gz -C /usr
