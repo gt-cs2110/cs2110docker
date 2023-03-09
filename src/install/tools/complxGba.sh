@@ -31,14 +31,15 @@ if [[ $(dpkg --print-architecture) == "arm64" ]]; then
     apt-get install -y libsdl2-2.0-0 libopengl0 libqt5widgets5 libqt5core5a libqt5gui5 libqt5multimedia5 libqt5opengl5 libzip4
     
     # Extract tarball with binaries
-    tar -zxvf $INST_SCRIPTS/pkgs/mgba_arm64.tar.gz -C /usr
+    tar -zxvf $INST_SCRIPTS/pkgs/mgba_0.10.1-jammy_arm64.tar.gz -C /
+    ldconfig
 else
-    apt-get install -y $INST_SCRIPTS/pkgs/libmgba_0.9.3-focal.deb
-    apt-get install -y $INST_SCRIPTS/pkgs/mgba-qt_0.9.3-focal.deb
+    apt-get install -y $INST_SCRIPTS/pkgs/libmgba_0.10.1-jammy.deb
+    apt-get install -y $INST_SCRIPTS/pkgs/mgba-qt_0.10.1-jammy.deb
 fi
-rm $INST_SCRIPTS/pkgs/libmgba_0.9.3-focal.deb
-rm $INST_SCRIPTS/pkgs/mgba-qt_0.9.3-focal.deb
-rm $INST_SCRIPTS/pkgs/mgba_arm64.tar.gz
+rm $INST_SCRIPTS/pkgs/libmgba_0.10.1-jammy.deb
+rm $INST_SCRIPTS/pkgs/mgba-qt_0.10.1-jammy.deb
+rm $INST_SCRIPTS/pkgs/mgba_0.10.1-jammy_arm64.tar.gz
 
 # Necessary config to get mgba to not run super fast, custom button keymapping, and other niceties.
 mkdir -p $HOME/.config/mgba
