@@ -117,12 +117,12 @@ fi
 if [ "$action" = "-it" ]; then
   if command -v winpty &> /dev/null; then
     # Run with winpty when available
-    winpty docker run --rm -p $ipAddress:6901:6901 -p $ipAddress:5901:5901 -v "$currDir":/cs2110/host/ --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -it  --entrypoint //dockerstartup/it_startup.sh "$imageName"
+    winpty docker run --rm -p 6901:6901 -p 5901:5901 -v "$currDir":/cs2110/host/ --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -it  --entrypoint //dockerstartup/it_startup.sh "$imageName"
   else
-    docker run --rm -p $ipAddress:6901:6901 -p $ipAddress:5901:5901 -v "$currDir":/cs2110/host/ --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -it  --entrypoint //dockerstartup/it_startup.sh "$imageName"
+    docker run --rm -p 6901:6901 -p 5901:5901 -v "$currDir":/cs2110/host/ --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -it  --entrypoint //dockerstartup/it_startup.sh "$imageName"
   fi
 elif [ "$action" = "start" ]; then
-  docker run -d -p $ipAddress:6901:6901 -p $ipAddress:5901:5901 -v "$currDir":/cs2110/host/ --cap-add=SYS_PTRACE --security-opt seccomp=unconfined "$imageName"
+  docker run -d -p 6901:6901 -p 5901:5901 -v "$currDir":/cs2110/host/ --cap-add=SYS_PTRACE --security-opt seccomp=unconfined "$imageName"
 
   successfulRun=$?
 
