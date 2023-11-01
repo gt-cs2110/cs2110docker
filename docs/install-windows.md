@@ -10,9 +10,8 @@ Docker Desktop only runs on relatively recent builds of Windows:
 
 If you are running an older version and do not want to or cannot update, please ask your TA for help. You can determine your version of Windows by pressing `⊞ Win` + `R`, typing `winver` in the box that shows up, and then hitting Enter.
 
-
 ### Installation Steps
-1. Install Git for Windows if you do not already have it, which can
+1. (**Skip this step when installing Docker for just C**) Install Git for Windows if you do not already have it, which can
 be found at <https://gitforwindows.org/>{:target="_blank"}.
     * The Git installation will prompt you for lots of configuration options about Git; if you don't know what an option means, select the default option.
 
@@ -33,9 +32,9 @@ be found at <https://gitforwindows.org/>{:target="_blank"}.
     * Search for "Windows PowerShell" in the Start Menu, right click it, and select "Run as administrator". Then, run the command `wsl --install`.
     * If that fails (some error like `wsl: command not found`, or something about `--install` being an invalid flag), then follow **Steps 1-5 only** of the manual installation instructions found [here](https://docs.microsoft.com/en-us/windows/wsl/install-manual){:target="_blank"}. 
 6.  When the whale in the bottom left of this window is green and says "Running" on hover, Docker is ready to run. If you cannot get Docker for Windows to run at this point, please ask a TA for help.
-7. After Docker has started, search for "Git Bash" in the Start Menu, and use `cd` to navigate to the directory in which you put the `cs2110docker.sh` script.
+7. After Docker has started, use `cd` to navigate to the directory in which you put the `cs2110docker.bat` script.
     * See [Navigating the Terminal](navigating-terminal.md){:target="_blank"} if you are not familiar with how to do this.
-8. Run the script by typing `./cs2110docker.sh`.
+8. Run the script by typing `cs2110docker.bat`.
     * This may take a moment if it is your first time running the script, but if everything goes as planned, you should see eventually see the message `Successfully launched CS 2110 Docker container.`
 
-Installation is done, and you have the container up and running! Finally, check out [Using the CS 2110 Docker Container](using-docker.md).
+Installation is done, and you have the container up and running! Finally, check out [Using the CS 2110 Docker Container](c-guide/using-docker-c.md).

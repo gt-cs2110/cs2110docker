@@ -1,5 +1,5 @@
 ---
-title: Using the CS 2110 Docker Contaner
+title: Using the CS 2110 Docker Contaner with noVNC
 ---
 
 There are two ways to run the Docker image---using a browser or using a VNC client. When you ran the `cs2110docker.sh` script, the last line outputted a URL, which should be something along the lines of:

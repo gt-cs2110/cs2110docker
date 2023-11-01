@@ -1,26 +1,14 @@
 ---
 title: Welcome to CS 2110!
 ---
-*Guide last updated: August 24, 2022*
+*Guide last updated: October 31, 2023*
 
 
 We have created a Docker image for the students of CS 2110 that contains all of the tools that they will need throughout this course. The image itself is hosted on [Docker Hub](https://hub.docker.com/r/gtcs2110/cs2110docker/){:target="_blank"}, but we have developed a script for you to use so you don't need to worry about that.
 
-The image is set up to be a very basic Ubuntu 20.04 machine that includes the following tools that you need for this class:
- -   CircuitSim (for circuits)
- -   complx (for assembly)
- -   `gcc` and `gdb` (for C)
-
- One thing that it does not include is a text editor. **STUDENTS SHOULD NOT EDIT ANY FILES INSIDE OF THE CONTAINER!** When you write code later in the semester, you will edit the files in your favorite text editor *outside* of the container, and test them inside the container using the tools provided.
-
-# Installation
-
-First, download the [latest stable version of the CS 2110 Docker script](files/cs2110docker.sh){:download}, and put it in a folder where you want to do all your work for this class.
-
-Next, you need to install Docker. Please follow the instructions below for your platform:
-- [Windows](install-windows.md)
-- [macOS](install-mac.md)
-- [Linux](install-linux.md)
+### **Note: We have two variations of CS 2110 Docker images for this course. Please select the guide that is applicable to your section of the course!**
+- [C Docker container guide](c-guide/c-guide.md)
+- [noVNC Docker container guide](novnc-guide/novnc-guide.md)
 
 If you run into any issues, please take a look at [Common Issues](common-issues.md), and also don't hesitate to ask one of your TAs for help!
 
