@@ -2,7 +2,7 @@
 title: Using the CS 2110 Docker Contaner for C Only
 ---
 
-When you first start the Docker container, you will still be in the same window that you ran the script from. However, the container is now presenting you with a Linux shell. If you run the command `ls`, you should see a device called `host`, which contains all of the same files and folders as the folder containing your CS 2110 Docker script (`cs2110docker.sh` or `cs2110docker-c.bat`). For instance, if your script is stored in Desktop, then you should see all the contents of your Desktop folder inside `host`. The folder has been *mounted* inside the container, meaning updating the files on your computer will be reflected in the container and vice versa.
+When you first start the Docker container, you will still be in the same window that you ran the script from. However, the container is now presenting you with a Linux shell. If you run the command `ls`, you should see a device called `host`, which contains all of the same files and folders as the folder containing your CS 2110 Docker script (`cs2110docker-c.sh` or `cs2110docker-c.bat`). For instance, if your script is stored in Desktop, then you should see all the contents of your Desktop folder inside `host`. The folder has been *mounted* inside the container, meaning updating the files on your computer will be reflected in the container and vice versa.
 
 You should then see something like this:
 ![image](../assets/dockerc1.png){:.centered}
@@ -21,12 +21,12 @@ To get out of the Docker container, type in `exit` and it should bring you back 
 
 When you are done using the container, you can shut it down by running
     
-    ./cs2110docker.sh stop
+    ./cs2110docker-c.sh stop
 
 on MacOS/Linux or 
 
-    cs2110docker.bat stop
-    
+    cs2110docker-c.bat stop
+
 on Windows.
 
 **Note for Windows users**: Docker Desktop on Windows uses a WSL 2 virtual machine to run the Docker container. Stopping the container will not stop the VM, which can eat up a lot of RAM. Therefore, you may also want to run the following command after stopping the container and/or [create a .wslconfig file](../common-issues.md#wslconfig){:target="_blank"}.:

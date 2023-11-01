@@ -21,12 +21,12 @@ If your Mac is older than 2010, please post privately on Ed Discussion / Piazza 
 3. There are some bugs with new features in macOS that can cause your files to not show up correctly in Docker. Please go to the settings inside Docker and **disable gRPC FUSE** (the box should be unchecked). This only needs to be done once.
     ![image](assets/dockermacsettings.png){:.centered}
     ![image](assets/dockergrpcfuse.png){:.centered}
-4. After Docker has started, open the Terminal application, and use `cd` to navigate to the directory in which you put the `cs2110docker.sh` script.
+4. After Docker has started, open the Terminal application, and use `cd` to navigate to the directory in which you put the `cs2110docker-c.sh` script.
     * See [Navigating the Terminal](navigating-terminal.md){:target="_blank"} if you are not familiar with how to do this.
 5. Run the following command to give the Docker script permission to run (you only need to do this the first time):
-    * `sudo chmod +x cs2110docker.sh`
+    * `sudo chmod +x cs2110docker-c.sh`
     * Enter your password if prompted.
-6. Run the script by typing `./cs2110docker.sh`.
+6. Run the script by typing `./cs2110docker-c.sh`.
     * This may take a moment if it is your first time running the script, but if everything goes as planned, you should see eventually see the message `Successfully launched CS 2110 Docker container.`
 
 Installation is done, and you have the container up and running! Finally, check out [Using the CS 2110 Docker Container](c-guide/using-docker-c.md).

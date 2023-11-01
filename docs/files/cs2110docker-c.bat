@@ -33,12 +33,6 @@ if defined arg (
 )
 :end_if
 
-powershell Get-Process 'com.docker.proxy' > nul
-if "%errorlevel%" neq "0" (
-    echo ERROR: Docker not found. Ensure that Docker is installed and is running before running this script. Refer to the CS 2110 Docker Guide.
-    exit /b 1
-)
-
 echo Found Docker Installation
 
 if "%action%"=="stop" (
@@ -67,5 +61,5 @@ if "%errorlevel%" neq "0" (
 set currDir=%cd%
 
 if "%action%"=="start" (
-    docker run --rm -v %currDir%:/cs2110/host --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -it "%imageName%"
+    docker run --rm -v "%currDir%:/cs2110/host" --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -it "%imageName%"
 )

@@ -13,12 +13,12 @@ The installation process should have set the Docker daemon to start on boot, so 
 1. Before you can launch the container, you have to set up the user group for Docker (you only need to do this on the first run). Open a terminal window and run the following commands:
     * `sudo groupadd docker`
     * `sudo usermod -aG docker $USER`
-2. Open a terminal and use `cd` to navigate to the directory in which you put the `cs2110docker.sh` script.
+2. Open a terminal and use `cd` to navigate to the directory in which you put the `cs2110docker-c.sh` script.
     * See [Navigating the Terminal](navigating-terminal.md){:target="_blank"} if you are not familiar with how to do this.
 3. Run the following command to give the Docker script permission to run (again, you only need to do this the first time):
-    * `sudo chmod +x cs2110docker.sh`
+    * `sudo chmod +x cs2110docker-c.sh`
     * Enter your password if prompted.
-5. Run the script by typing `./cs2110docker.sh`.
+5. Run the script by typing `./cs2110docker-c.sh`.
     * This may take a moment if it is your first time running the script, but if everything goes as planned, you should see eventually see the message `Successfully launched CS 2110 Docker container.`
 
 Installation is done, and you have the container up and running! Finally, check out [Using the CS 2110 Docker Container](c-guide/using-docker-c.md).
