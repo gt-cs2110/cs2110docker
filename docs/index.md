@@ -12,8 +12,6 @@ We have created a Docker image for the students of CS 2110 that contains all of 
 
 If you run into any issues, please take a look at [Common Issues](common-issues.md), and also don't hesitate to ask one of your TAs for help!
 
-After you finish installing, check out [Using the CS 2110 Docker Container](using-docker.md) and make sure everything is working.
-
 # Optional reading (for the curious)
 ## What even is Docker?
 I'm so glad you asked. In order to answer this question we have to go back in time:
