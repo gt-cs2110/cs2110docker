@@ -19,6 +19,6 @@ The installation process should have set the Docker daemon to start on boot, so 
     * `sudo chmod +x cs2110docker-c.sh`
     * Enter your password if prompted.
 5. Run the script by typing `./cs2110docker-c.sh`.
-    * This may take a moment if it is your first time running the script, but if everything goes as planned, you should see eventually see the message `Successfully launched CS 2110 Docker container.`
+    * This may take a moment if it is your first time running the script, but if everything goes as planned, you should see eventually that your user and path for your host machine should be replaced by something along the lines of `root@41c0750d2a18`, with varying characters after `root@`.
 
 Installation is done, and you have the container up and running! Finally, check out [Using the CS 2110 Docker Container](c-guide/using-docker-c.md).

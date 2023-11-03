@@ -34,7 +34,7 @@ be found at <https://gitforwindows.org/>{:target="_blank"}.
 6.  When the whale in the bottom left of this window is green and says "Running" on hover, Docker is ready to run. If you cannot get Docker for Windows to run at this point, please ask a TA for help.
 7. After Docker has started, use `cd` to navigate to the directory in which you put the `cs2110docker-c.bat` script.
     * See [Navigating the Terminal](navigating-terminal.md){:target="_blank"} if you are not familiar with how to do this.
-8. Run the script by typing `cs2110docker.bat`.
-    * This may take a moment if it is your first time running the script, but if everything goes as planned, you should see eventually see the message `Successfully launched CS 2110 Docker container.`
+8. Run the script by typing `cs2110docker-c.bat`.
+    * This may take a moment if it is your first time running the script, but if everything goes as planned, you should see eventually that your user and path for your host machine should be replaced by something along the lines of `root@41c0750d2a18`, with varying characters after `root@`.
 
 Installation is done, and you have the container up and running! Finally, check out [Using the CS 2110 Docker Container](c-guide/using-docker-c.md).
