@@ -106,10 +106,5 @@ else
 fi
 
 if [ "$action" = "start" ]; then
-  if command -v winpty &> /dev/null; then
-    # Run with winpty when available
-    winpty docker run --rm -v "$currDir":/cs2110/host/ --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -it "$imageName"
-  else
-    docker run --rm -v "$currDir":/cs2110/host/ --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -it "$imageName"
-  fi
+  docker run --rm -v "$currDir":/cs2110/host/ --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -it "$imageName"
 fi
