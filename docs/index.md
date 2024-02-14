@@ -7,8 +7,11 @@ title: Welcome to CS 2110!
 We have created a Docker image for the students of CS 2110 that contains all of the tools that they will need throughout this course. The image itself is hosted on [Docker Hub](https://hub.docker.com/r/gtcs2110/cs2110docker/){:target="_blank"}, but we have developed a script for you to use so you don't need to worry about that.
 
 ### **Note: We have two variations of CS 2110 Docker images for this course. Please select the guide that is applicable to your section of the course!**
-- [C Docker container guide](c-guide/c-guide.md) (**Fall 2023 with Conte, Gupta, Adams**) 
-- [noVNC Docker container guide](novnc-guide/novnc-guide.md)
+### Begin installation by following these steps:
+- [Docker container guide](c-guide/c-guide.md) (**Spring 2024 with Forsyth, Hillegass, Moss**) 
+
+### If you wish to use the old noVNC docker, installation steps are still available here:
+- [noVNC Docker container guide](novnc-guide/novnc-guide.md) 
 
 If you run into any issues, please take a look at [Common Issues](common-issues.md), and also don't hesitate to ask one of your TAs for help!
 

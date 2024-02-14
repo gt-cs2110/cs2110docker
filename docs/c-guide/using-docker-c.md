@@ -10,7 +10,7 @@ You should then see something like this:
 And then you can move around and interact with the Docker container like in any other termninal. Your host directory might look something like this depending on what files you have in your folder: 
 ![image](../assets/dockerc2.png){:.centered}
 
-You can further navigate to specific folders for assignments using `cd`. For example, for Project 3, your folder might look like this:
+You can further navigate to specific folders for assignments using `cd`. For example, for a folder called Project 3, your folder might look like this:
 ![image](../assets/dockerc3.png){:.centered}
 
 **When you are doing your work, you should edit all of you files in this folder on your host machine. Then, use the Docker container to run the code. DO NOT SAVE FILES INSIDE THE CONTAINER ANYWHERE EXCEPT IN THE `host` FOLDER. THEY WILL DISAPPEAR. PLEASE DON'T DO IT. PLEASE.**

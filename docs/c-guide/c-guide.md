@@ -9,9 +9,7 @@ The image is set up to be a very basic Ubuntu 22.04 machine that includes the fo
 
 # Installation
 
-First, download the latest stable version of one of the CS 2110 Docker scripts down below, and put it in a folder where you want to do all your work for this class.
-- [Windows](../files/cs2110docker-c.bat){:download}
-- [MacOS/Linux](../files/cs2110docker-c.sh){:download}
+First, download the latest stable version of one of the CS 2110 Docker scripts from Canvas, and put it in a folder where you want to do all your work for this class.
 
 Next, you need to install Docker. Please follow the instructions below for your platform:
 - [Windows](../install-windows.md)
