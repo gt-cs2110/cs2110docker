@@ -16,11 +16,17 @@ If your Mac is a 2010 model or newer and is running macOS El Capitan 10.11 or ne
 If your Mac is older than 2010, please post privately on Ed Discussion / Piazza and we can discuss a solution.
 
 ## Running the Docker container
-1. Make 100% sure you've rebooted your computer after installation before proceeding.
+1. Make 100% sure **you're running the most recent version of MacOS** and that you've rebooted your computer after installation before proceeding.
 2. Open the "Docker Desktop" application. Docker will start up, and the whale icon should eventually either turn green (yay it worked!) or red (error). If it comes up red, please ask a TA for help.
-3. There are some bugs with new features in macOS that can cause your files to not show up correctly in Docker. Please go to the settings inside Docker and **disable gRPC FUSE** (the box should be unchecked). This only needs to be done once.
-    ![image](assets/dockermacsettings.png){:.centered}
-    ![image](assets/dockergrpcfuse.png){:.centered}
+3. There are some bugs with new features in macOS that can cause your files to
+   not show up correctly in Docker. Please go to the settings inside Docker,
+   and on `Choose file sharing implementation for your containers`, ensure that
+   **VirtioFS** is selected (and that **gRPC FUSE isn't**). This only needs to be
+   done once.
+        ![image](assets/dockermacsettings.png){:.centered}
+        ![image](assets/dockergrpcfuse.png){:.centered}
+   (If you are using an older version of Docker Desktop or don't see the VirtioFS selection, there should instead be a checkbox labeled `Use gRPC FUSE for file sharing`. **Uncheck it.**)
+<!-- 3. There are some bugs with new features in macOS that can cause your files to not show up correctly in Docker. Please go to the settings inside Docker and **disable gRPC FUSE** (the box should be unchecked). This only needs to be done once. -->
 4. After Docker has started, open the Terminal application, and use `cd` to navigate to the directory in which you put the `cs2110docker-c.sh` script.
     * See [Navigating the Terminal](navigating-terminal.md){:target="_blank"} if you are not familiar with how to do this.
 5. Run the following command to give the Docker script permission to run (you only need to do this the first time):
